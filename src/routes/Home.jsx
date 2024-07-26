@@ -21,7 +21,7 @@ const containerVariants = {
 const Body = () => {
   return (
     <motion.div
-      className="flex flex-row items-start justify-end h-full mt-8"
+      className="flex flex-col sm:flex-row items-start justify-end h-full mt-8"
       variants={containerVariants}
       initial="hidden"
       exit="exit"
@@ -35,17 +35,17 @@ const Body = () => {
         <p className="text-gray-200 opacity-60">
           Quality websites and apps with fast deliverables
         </p>
-        <div className="my-4 mt-20">
+        <div className="my-4 mt-20 flex flex-col sm:flex-row items-center">
           <a
             href=""
-            className="py-2 px-3 bg-amber-600 transition-colors rounded-md hover:bg-amber-500"
+            className="py-2 px-3 my-3 bg-amber-600 transition-colors rounded-md hover:bg-amber-500 sm:w-auto w-full"
             target="_blank"
           >
             E-mail me
           </a>
           <a
             href=""
-            className="py-2 px-3 mx-2 bg-amber-600 transition-colors rounded-md hover:bg-amber-500"
+            className="py-2 px-3 mx-2 my-3 bg-amber-600 transition-colors rounded-md hover:bg-amber-500 sm:w-auto w-full"
             target="_blank"
           >
             <img src={facebook} alt="F" className="w-5 inline text-center" />
@@ -56,7 +56,7 @@ const Body = () => {
       <motion.img
         src={illustration}
         alt="illustration"
-        className="w-2/5"
+        className="sm:w-2/5 w-full"
         initial={{ opacity: 0, x: "100vw" }}
         transition={{ delay: 1, type: "tween", duration: 0.4 }}
         animate={{ opacity: 1, x: 0 }}

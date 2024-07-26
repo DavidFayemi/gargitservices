@@ -12,17 +12,17 @@ import { Route, Routes, useLocation } from "react-router-dom";
 const App = () => {
   const location = useLocation();
   return (
-    <div className="flex flex-col min-h-screen bg-neutral-950 p-10 text-gray-100 text-xl overflow-hidden">
+    <div className="flex flex-col min-h-screen bg-neutral-950 sm:p-10 text-gray-100 text-xl min-w-full p-5">
       <Nav />
-      <AnimatePresence mode="wait">
-      <Routes location={location} key={location.key}>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/resume" element={<Resume />} />
-        <Route path="/skills" element={<Skills />} />
-        <Route path="*" element={<ErrorPage />} />
-      </Routes>
+      <AnimatePresence mode="sync">
+        <Routes location={location} key={location.key}>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/resume" element={<Resume />} />
+          <Route path="/skills" element={<Skills />} />
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
       </AnimatePresence>
     </div>
   );
